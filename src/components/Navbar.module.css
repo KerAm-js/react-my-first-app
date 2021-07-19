@@ -1,0 +1,29 @@
+.nav {
+  background-color: rgb(0, 50, 71);
+}
+.title {
+  padding: 0 0 0 40px;
+  color: rgb(0, 238, 186);
+}
+.items {
+}
+.item {
+  padding: 5px 0 5px 40px;
+  font-size: 18px;
+}
+.item a{
+  color: rgb(0, 238, 186);
+}
+.item:hover {
+  cursor: pointer;
+  background-color: rgb(0, 83, 119);
+}
+.item.active {
+  background-color: rgb(0, 238, 186);
+}
+.item.active a {
+  color: rgb(0, 50, 71);
+}
+.link {
+  color: white;
+}

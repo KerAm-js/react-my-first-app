@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
 import Header from'./components/Header';
-import Nav from './components/Navbar';
+import Navbar from './components/Navbar';
 import Profile from './components/Profile';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <div className="app-wrapper">
       <Header/>
-      <Nav/>
-      <Profile/>
+      <main className="main">
+        <Navbar/>
+        <Profile/>
+      </main>
+      <Footer/>
     </div>
   );
 };
