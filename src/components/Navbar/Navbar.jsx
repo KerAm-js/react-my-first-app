@@ -1,5 +1,7 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import s from './Navbar.module.css';
+import Item from './Item/Item';
 
 const Navbar = () => {
   return (
@@ -8,21 +10,11 @@ const Navbar = () => {
         <h2>Menu</h2>
       </div>
       <div className={s.items}>
-        <div className={`${s.item}`}>
-          <a className={s.link} href="/profile">Profile</a>
-        </div>
-        <div className={s.item}>
-          <a className={s.link} href="/messages">Messages</a>
-        </div>                 
-        <div className={s.item}>
-          <a className={s.link} href="/news">News</a>
-        </div>
-        <div className={s.item}>
-          <a className={s.link} href="/liked">Liked</a>
-        </div>
-        <div className={s.item}>
-          <a className={s.link} href="/settings">Settings</a>
-        </div>
+      <Item text="Profile" link="/profile"/>
+        <Item text="Messages" link="/messages"/>           
+        <Item text="News" link="/news"/>
+        <Item text="Liked" link="/liked"/>
+        <Item text="Settings" link="/settings"/>
       </div>
     </nav>
   );
