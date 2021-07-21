@@ -8,20 +8,20 @@ const Navbar = () => {
         <h2>Menu</h2>
       </div>
       <div className={s.items}>
-        <div className={`${s.item} ${s.active}`}>
-          <a className={s.link} href="#">Profile</a>
+        <div className={`${s.item}`}>
+          <a className={s.link} href="/profile">Profile</a>
         </div>
         <div className={s.item}>
-          <a className={s.link} href="#">Messages</a>
+          <a className={s.link} href="/messages">Messages</a>
         </div>                 
         <div className={s.item}>
-          <a className={s.link} href="#">News</a>
+          <a className={s.link} href="/news">News</a>
         </div>
         <div className={s.item}>
-          <a className={s.link} href="#">Music</a>
+          <a className={s.link} href="/liked">Liked</a>
         </div>
         <div className={s.item}>
-          <a className={s.link} href="#">Settings</a>
+          <a className={s.link} href="/settings">Settings</a>
         </div>
       </div>
     </nav>

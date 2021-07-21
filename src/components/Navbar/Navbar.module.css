@@ -5,13 +5,13 @@
   padding: 0 0 0 40px;
   color: rgb(0, 238, 186);
 }
-.items {
-}
 .item {
   padding: 5px 0 5px 40px;
-  font-size: 18px;
+  display: flex;
 }
-.item a{
+.link {
+  flex: 1;
+  font-size: 18px;
   color: rgb(0, 238, 186);
 }
 .item:hover {
@@ -24,7 +24,4 @@
 }
 .item.active a {
   color: rgb(0, 50, 71);
-}
-.link {
-  color: white;
 }
