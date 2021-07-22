@@ -1,0 +1,20 @@
+.container{
+  padding: 2px 5px;
+  width: 70%;
+  min-height: 40px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.34);
+  margin: 0 0 15px 0;
+}
+.you {
+  background-color: aquamarine;
+}
+.text {
+  font-size: 16px;
+}
+.time {
+  font-size: 12px;
+  opacity: 0.8;
+}
