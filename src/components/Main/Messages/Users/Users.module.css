@@ -1,0 +1,22 @@
+.container {
+  padding: 10px 0 0 0;
+  background-color: #fff;
+  height: 100%;
+}
+.search {
+  border-bottom: 0.1px solid rgb(0, 50, 71);
+  padding: 0 0 10px 20px;
+  display: flex;
+}
+.search img {
+  margin: 5px 0 0 0;
+  height: 20px;
+  width: 18px;
+}
+.search input {
+  font-size: 15px;
+  padding: 5px;
+  height: 100%;
+  border: none;
+  outline: none;
+}

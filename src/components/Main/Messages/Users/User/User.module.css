@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+.container a {
+  flex: 1;
+  padding: 0 0 0 20px;
+  cursor: pointer;
+}
+.container a:hover {
+  background-color: rgb(200, 200, 200);
+}
+.container a.active {
+  background-color: rgb(0, 238, 186);
+}
+.content {
+  display: grid;
+  grid-template: 1fr / 50px 1fr;
+}
+.ava img {
+  width: 45px;
+  padding: 10px 0;
+}
+.info {
+  padding: 10px 0px 10px 20px;
+}
+.username {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 2px 0;
+}
+.last_message {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
