@@ -13,15 +13,16 @@ const MyPosts = () => {
     {id: 4, text: "I like it", likeCount: 29},
   ];
 
+  let items = posts.map( post => (
+    <Post text={post.text} likeCount={posts.likeCount} avaLink={avaLink} />)
+  );
+
   return (
-    <div className={s.posts}>
+    <div className={s.container}>
       <h2>My posts</h2>
       <AddPost/>
-      <div className={s.list}>
-        <Post text={posts[0].text} likeCount={posts[0].likeCount} avaLink={avaLink}/>
-        <Post text={posts[1].text} likeCount={posts[1].likeCount} avaLink={avaLink}/>
-        <Post text={posts[2].text} likeCount={posts[2].likeCount} avaLink={avaLink}/>
-        <Post text={posts[3].text} likeCount={posts[3].likeCount} avaLink={avaLink}/>
+      <div className={s.posts}>
+        {items}
       </div>
     </div>
   );

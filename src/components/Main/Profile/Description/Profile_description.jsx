@@ -9,7 +9,7 @@ export default props => {
     location: "Chechen Republic",
     interest: "Programming, mathematics, logistics, business"
   }
-
+  
   return (
     <div className={s.container}>
       <img className={s.ava} src={data.ava}/>

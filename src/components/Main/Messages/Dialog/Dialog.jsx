@@ -13,14 +13,13 @@ const Dialog = (props) => {
    {id: 6, sender : "you", time : "21:15", text : "I,m ok"},
   ];
 
+  let dialog = messages.map(message => (
+    <Message sender={message.sender} text={message.text} time={message.time} />
+  ))
+
   return (
     <div className={s.container}>
-      <Message sender={messages[0].sender} text={messages[0].text} time={messages[0].time}/>
-      <Message sender={messages[1].sender} text={messages[1].text} time={messages[1].time}/>
-      <Message sender={messages[2].sender} text={messages[2].text} time={messages[2].time}/>
-      <Message sender={messages[3].sender} text={messages[3].text} time={messages[3].time}/>
-      <Message sender={messages[4].sender} text={messages[4].text} time={messages[4].time}/>
-      <Message sender={messages[4].sender} text={messages[5].text} time={messages[5].time}/>
+      {dialog}
     </div>
   );
 };
