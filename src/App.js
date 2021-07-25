@@ -14,7 +14,15 @@ import Liked from './components/Main/Liked/Liked';
 import Settings from './components/Main/Settings/Settings';
 
 
+
 const App = (props) => {
+
+  const profile = () => <Profile profileData={props.profileData} myPosts={props.myPosts}/>;
+  const messages = () => <Messages users={props.users} messages={props.messages}/>;
+  const news = () => <News />;
+  const liked = () => <Liked />;
+  const settings = () => <Settings />;
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -22,11 +30,11 @@ const App = (props) => {
         <main className="main">
           <Navbar/>
           <div className="content">
-            <Route path="/profile" component={Profile}/>
-            <Route path="/messages" component={Messages}/>
-            <Route path="/news" component={News}/>
-            <Route path="/liked" component={Liked}/>
-            <Route path="/settings" component={Settings}/>
+            <Route path="/profile" render={profile}/>
+            <Route path="/messages" render={messages}/>
+            <Route path="/news" render={news}/>
+            <Route path="/liked" render={liked}/>
+            <Route path="/settings" render={settings}/>
           </div>
         </main>
         <Footer/>

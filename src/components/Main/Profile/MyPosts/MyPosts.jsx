@@ -4,13 +4,11 @@ import Post from './Post/Post.jsx';
 import AddPost from './AddPost/AddPost';
 
 const MyPosts = (props) => {
-  
-  let avaLink = "https://images.unsplash.com/photo-1626682929870-21cfb734281e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80";
-  
-  let items = props.posts.map( post => (
-    <Post text={post.text} likeCount={post.likeCount} avaLink={avaLink} />)
-  );
 
+  let items = props.myPosts.map( post => (
+    <Post text={post.text} likeCount={post.likeCount} avaLink={props.avaLink} />)
+  );
+  
   return (
     <div className={s.container}>
       <h2>My posts</h2>
