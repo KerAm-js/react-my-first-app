@@ -6,7 +6,7 @@ const Users = (props) => {
   let searchImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/1200px-Vector_search_icon.svg.png";
   
   let list = props.users.map(user => (
-    <User id={user.id} ava_link={user.avaLink} username={user.username} last_message={user.lastMessage}/>
+    <User id={user.id} ava={user.ava} username={user.username} last_message={user.lastMessage}/>
   ))
   return (
     <div className={s.container}>

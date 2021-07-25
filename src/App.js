@@ -14,11 +14,14 @@ import Liked from './components/Main/Liked/Liked';
 import Settings from './components/Main/Settings/Settings';
 
 
-
 const App = (props) => {
 
-  const profile = () => <Profile profileData={props.profileData} myPosts={props.myPosts}/>;
-  const messages = () => <Messages users={props.users} messages={props.messages}/>;
+  const profile = () => (
+    <Profile state={props.appState.profilePage}/>
+  );
+  const messages = () => (
+    <Messages state={props.appState.messagesPage}/>
+  );
   const news = () => <News />;
   const liked = () => <Liked />;
   const settings = () => <Settings />;

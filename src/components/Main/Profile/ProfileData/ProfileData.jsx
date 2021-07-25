@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Profile_description.module.css';
+import s from './ProfileData.module.css';
 
 export default props => {
   let profileData = props.profileData;
