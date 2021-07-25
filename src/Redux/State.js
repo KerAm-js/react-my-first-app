@@ -1,18 +1,21 @@
 let state = {
   profilePage: {
-    profileData: {
-      ava: "https://images.unsplash.com/photo-1626682929870-21cfb734281e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80",
-      nick: "Kerimov777",
-      fullname: "Amir Kerimov",
-      location: "Chechen Republic",
-      interest: "Programming, mathematics, logistics, business",
-    },
     myPosts: [
       {id: 1, text: "Hello, I use Lists", likeCount: 12},
       {id: 2, text: "How are you, users?", likeCount: 25},
       {id: 3, text: "This is a good application", likeCount: 40},
       {id: 4, text: "I like it", likeCount: 29},
     ],
+    profileData: {
+      ava: "https://images.unsplash.com/photo-1626682929870-21cfb734281e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80",
+      nick: "Kerimov777",
+      fullname: "Amir Kerimov",
+      location: "Chechen Republic",
+      interest: "Programming, mathematics, logistics, business",
+      postsCount: 4,
+      friendsCount: 4,
+      interestsCount: 10,
+    },
   },
   messagesPage: {
     messages: [
