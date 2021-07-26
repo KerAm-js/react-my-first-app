@@ -27,6 +27,7 @@
   grid-column: 2 / 3;
 }
 .like button {
+  width: auto;
   padding: 0 5px;
   font-size: 15px;
   cursor: pointer;
@@ -34,7 +35,7 @@
   background-color: #fff;
 }
 .like button:hover {
-  background-color: rgb(156, 0, 0);
+  background-color: rgb(146, 0, 0);
   color: #fff;
 }
 

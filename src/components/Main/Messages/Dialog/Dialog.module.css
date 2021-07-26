@@ -1,5 +1,9 @@
 .container {
-  padding: 25px 0 0 0;
   background-color: #fff;
   height: 100%;
+  display: grid;
+  grid-template: 1fr 80px / 1fr;
+}
+.dialog {
+  padding: 20px;
 }

@@ -19,9 +19,9 @@ export default props => {
             <div className={s.interests_count}>
               interests: {props.profileData.interestsCount}
             </div>
-            <div className={s.name}>
+            {/* <div className={s.name}>
               {props.profileData.fullname}
-            </div>
+            </div> */}
           </div>
       </div>
     </div>

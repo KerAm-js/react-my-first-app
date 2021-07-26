@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Dialog.module.css';
 import Message from './Message/Message';
+import SendMessage from './SendMessage/SendMessage';
 
 const Dialog = (props) => {
   
@@ -10,7 +11,12 @@ const Dialog = (props) => {
 
   return (
     <div className={s.container}>
-      {dialog}
+      <div className={ s.dialog }>
+        {dialog}
+      </div>
+      <div className={ s.send_message }>
+        <SendMessage/>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template: 1fr /50px 10fr 1fr 50px;
+}
+.container textarea {
+  grid-column: 2;
+  width: 100%;
+  border-color: rgb(0, 50, 71);
+  padding: 5px;
+}
+.container button {
+  width: 100%;
+  grid-column: 3;
+}
