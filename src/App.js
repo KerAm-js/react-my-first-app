@@ -15,9 +15,11 @@ import Settings from './components/Main/Settings/Settings';
 
 
 const App = (props) => {
-
   const profile = () => (
-    <Profile state={props.appState.profilePage}/>
+    <Profile 
+      state={props.appState.profilePage} 
+      addPost={ props.addPost }
+    />
   );
   const messages = () => (
     <Messages state={props.appState.messagesPage}/>

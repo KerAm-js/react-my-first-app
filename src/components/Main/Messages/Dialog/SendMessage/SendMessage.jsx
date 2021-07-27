@@ -4,6 +4,7 @@ import s from './SendMessage.module.css';
 const SendMessage = (props) => {
   
   let textAreaRef = React.createRef();
+  
   let sendMessage = () => {
     alert(textAreaRef.current.value);
   };

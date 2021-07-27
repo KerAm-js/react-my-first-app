@@ -6,15 +6,16 @@ export default (props) => {
   
   let textAreaRef = React.createRef();
 
-  let addPost = () => {
+  let addNewPost = () => {
     let message = textAreaRef.current.value;
-    alert(message);
+    props.addPost(message);
+    textAreaRef.current.value = '';
   };
 
   return (<div className={ s.new_post }>
     <textarea ref={ textAreaRef }></textarea>
     <div>
-      <button onClick={ addPost }>Add post</button>
+      <button onClick={ addNewPost }>Add post</button>
     </div>
   </div>)
 }
