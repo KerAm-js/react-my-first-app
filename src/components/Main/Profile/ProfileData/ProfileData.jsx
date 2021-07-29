@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './ProfileData.module.css';
+import s from './ProfileData.module.scss';
 
 export default props => {
   return (

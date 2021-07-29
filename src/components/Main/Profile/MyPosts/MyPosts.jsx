@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import s from './MyPosts.module.scss';
 import Post from './Post/Post.jsx';
 import AddPost from './AddPost/AddPost';
 
@@ -13,13 +13,17 @@ const MyPosts = (props) => {
       avaLink={props.avaLink} 
     />)
   );
-  
+
   return (
     <div className={s.container}>
       <h2>My posts</h2>
-      <AddPost addPost={ props.addPost }/>
-      <div className={s.posts}>
-        {items}
+      <AddPost 
+        addPost={ props.addPost }
+        newPostText={ props.newPostText }
+        updateNewPostText={ props.updateNewPostText }
+      />
+      <div className={ s.posts }>
+        { items }
       </div>
     </div>
   );

@@ -1,6 +1,12 @@
+//variables 
+$blueColor: rgb(0, 50, 71);
+$greenColor: rgb(0, 238, 186);
+$shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+
 /* global styles */
 a {
   text-decoration: none;
+  color: $blueColor;
 }
 textarea {
   outline: none;
@@ -14,16 +20,17 @@ textarea {
 button {
   cursor: pointer;
   background-color: #fff;
-  border: 1px solid rgb(0, 50, 71);
-  color: rgb(0, 50, 71);
+  border: 1px solid $blueColor;
+  color: $blueColor;
 }
 button:hover {
   color: #fff;
-  background-color: rgb(0, 50, 71);
+  background-color: $blueColor;
 }
+
 .app-wrapper {
   height: 100vh;
-  background-color: rgb(0, 238, 186);
+  background-color: $greenColor;
   display: grid;
   grid-gap: 1px;
   grid-template: minmax(auto, 70px) 1fr minmax(auto, 43px) / 1fr;
@@ -34,11 +41,8 @@ button:hover {
   grid-template: 1fr / 220px 1fr;
 }
 .content {
-  color: rgb(0, 50, 71);
+  color: $blueColor;
   background-color: #fff;
   padding: 0 20px;
 }
-.content a {
-  color: rgb(0, 50, 71);
-}
- 
+

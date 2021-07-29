@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Users.module.css';
+import s from './Users.module.scss';
 import User from './User/User';
 
 const Users = (props) => {

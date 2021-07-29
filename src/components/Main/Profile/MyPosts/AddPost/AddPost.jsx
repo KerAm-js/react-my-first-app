@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './AddPost.module.css';
+import s from './AddPost.module.scss';
 
 
 export default (props) => {
@@ -7,13 +7,21 @@ export default (props) => {
   let textAreaRef = React.createRef();
 
   let addNewPost = () => {
-    let message = textAreaRef.current.value;
-    props.addPost(message);
-    textAreaRef.current.value = '';
+    props.addPost();
   };
 
+  let updateNewPostText = () => {
+    let newText = textAreaRef.current.value;
+    props.updateNewPostText(newText);
+  };
+
+  
   return (<div className={ s.new_post }>
-    <textarea ref={ textAreaRef }></textarea>
+    <textarea 
+      ref={ textAreaRef }
+      value={ props.newPostText }
+      onChange={ updateNewPostText }
+    />
     <div>
       <button onClick={ addNewPost }>Add post</button>
     </div>

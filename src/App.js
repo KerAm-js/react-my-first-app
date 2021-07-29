@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 
 //My imports
-import './App.css';
+import style from './App.module.scss';
 import Header from'./components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Main/Profile/Profile';
@@ -15,14 +15,19 @@ import Settings from './components/Main/Settings/Settings';
 
 
 const App = (props) => {
+  
   const profile = () => (
     <Profile 
-      state={props.appState.profilePage} 
+      profilePage={ props.appState.profilePage } 
       addPost={ props.addPost }
+      updateNewPostText={ props.updateNewPostText }
     />
   );
   const messages = () => (
-    <Messages state={props.appState.messagesPage}/>
+    <Messages 
+      messagesPage={ props.appState.messagesPage }
+      sendMessage={ props.sendMessage }
+    />
   );
   const news = () => <News />;
   const liked = () => <Liked />;
@@ -30,11 +35,11 @@ const App = (props) => {
 
   return (
     <BrowserRouter>
-      <div className="app-wrapper">
+      <div className={ style["app-wrapper"] }>
         <Header/>
-        <main className="main">
+        <main className={ style["main"] }>
           <Navbar/>
-          <div className="content">
+          <div className={ style["content"] }>
             <Route path="/profile" render={profile}/>
             <Route path="/messages" render={messages}/>
             <Route path="/news" render={news}/>

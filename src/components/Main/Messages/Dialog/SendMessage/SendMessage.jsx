@@ -1,18 +1,25 @@
 import React from 'react';
-import s from './SendMessage.module.css';
+import s from './SendMessage.module.scss';
 
 const SendMessage = (props) => {
   
   let textAreaRef = React.createRef();
-  
-  let sendMessage = () => {
-    alert(textAreaRef.current.value);
-  };
+  let sendNewMessage = () => {
+    let newMessage = textAreaRef.current.value;
+    props.sendMessage(newMessage);
+    textAreaRef.current.value = '';
+  }
 
   return (
     <div className={ s.container }>
-      <textarea ref={ textAreaRef }></textarea>
-      <button onClick={ sendMessage }>Send</button>
+      <textarea 
+        ref={ textAreaRef }
+      />
+      <button 
+        onClick={ sendNewMessage }
+      >
+        Send
+      </button>
     </div>
   )
 }

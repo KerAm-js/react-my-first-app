@@ -1,8 +1,9 @@
 import React from 'react';
-import s from './User.module.css';
+import s from './User.module.scss';
 import {NavLink} from 'react-router-dom';
 
 const User = (props) => {
+  
   let username = props.username[0].toUpperCase() + props.username.slice(1); 
   let path = '/messages/' + props.id;
 

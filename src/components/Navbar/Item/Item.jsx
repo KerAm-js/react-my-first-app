@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import s from './Item.module.css';
+import s from './Item.module.scss';
 
 const Item = (props) => {
   return (

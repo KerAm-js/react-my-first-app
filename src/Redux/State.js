@@ -1,11 +1,12 @@
+import { rerenderEntireTree } from './../render';
+
 let state = {
   profilePage: {
     myPosts: [
       {id: 1, text: "Hello, I use Lists", likeCount: 12},
       {id: 2, text: "How are you, users?", likeCount: 25},
-      {id: 3, text: "This is a good application", likeCount: 40},
-      {id: 4, text: "I like it", likeCount: 29},
     ],
+    newPostText: '',
     profileData: {
       ava: "https://images.unsplash.com/photo-1626682929870-21cfb734281e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80",
       nick: "Kerimov777",
@@ -19,12 +20,8 @@ let state = {
   },
   messagesPage: {
     messages: [
-      {id: 1, sender : "you", time : "21:13", text : "Hi"},
-      {id: 2, sender : "you", time : "21:13", text : "How are you?"},
-      {id: 3, sender : "user", time : "21:14", text : "Hello"},
-      {id: 4, sender : "user", time : "21:14", text : "I'm fine, thanks"},
-      {id: 5, sender : "user", time : "21:15", text : "And you?"},
-      {id: 6, sender : "you", time : "21:15", text : "I'm ok"},
+      {id: 1, sender : "user", time : "21:13", text : "Hi"},
+      {id: 2, sender : "user", time : "21:13", text : "How are you?"},
     ],
     users: [
       {id: 1, lastMessage: "last m", username: "Chad", ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png"},
@@ -39,14 +36,35 @@ let state = {
   },
 }
 
-export let addPost = (message) => {
-  let newPost = {
-    id: 5,
-    text: message,
-    likeCount: 0,
+export let addPost = () => {
+  if (state.profilePage.newPostText) {
+    let newPost = {
+      id: 3,
+      text: state.profilePage.newPostText,
+      likeCount: 0,
+    };
+    state.profilePage.myPosts.push(newPost);
+    rerenderEntireTree(state);
+    updateNewPostText('');
   };
-  state.profilePage.myPosts.push(newPost);
-  console.log(state.profilePage.myPosts)
-}
+};
+export let sendMessage = (message) => {
+  if (message) {
+    let newMessage = {
+      id: 3,
+      sender: 'you',
+      time: '00:00',
+      text: message,
+    };
+    state.messagesPage.messages.push(newMessage);
+    rerenderEntireTree(state);
+  }; 
+};
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+
 
 export default state;

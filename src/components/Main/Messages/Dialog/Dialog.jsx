@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Dialog.module.css';
+import s from './Dialog.module.scss';
 import Message from './Message/Message';
 import SendMessage from './SendMessage/SendMessage';
 
@@ -15,7 +15,7 @@ const Dialog = (props) => {
         {dialog}
       </div>
       <div className={ s.send_message }>
-        <SendMessage />
+        <SendMessage sendMessage={ props.sendMessage }/>
       </div>
     </div>
   );
