@@ -18,15 +18,16 @@ const App = (props) => {
   
   const profile = () => (
     <Profile 
-      profilePage={ props.appState.profilePage } 
-      addPost={ props.addPost }
-      updateNewPostText={ props.updateNewPostText }
+      profilePage={ props.store.getState().profilePage }
+      addPost={ props.store.addPost.bind(props.store) }
+      updateNewPostText={ props.store.updateNewPostText.bind(props.store) }
     />
   );
   const messages = () => (
     <Messages 
-      messagesPage={ props.appState.messagesPage }
-      sendMessage={ props.sendMessage }
+      messagesPage={ props.store.getState().messagesPage }
+      sendMessage={ props.store.sendMessage.bind(props.store) }
+      updateNewMessageText={ props.store.updateNewMessageText.bind(props.store) }
     />
   );
   const news = () => <News />;

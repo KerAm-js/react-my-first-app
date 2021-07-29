@@ -3,7 +3,7 @@ import s from './News.module.scss';
 
 const News = (props) => {
   return (
-    <div className="container">
+    <div className={ s.container }>
       News
     </div>
   );

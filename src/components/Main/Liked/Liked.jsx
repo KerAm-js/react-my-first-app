@@ -3,7 +3,7 @@ import s from './Liked.module.scss';
 
 const Liked = (props) => {
   return (
-    <div className="container">
+    <div className={ s.container }>
       Liked
     </div>
   );

@@ -10,6 +10,8 @@ const Messages = (props) => {
         <Dialog 
           messages={ props.messagesPage.messages }
           sendMessage={ props.sendMessage }
+          newMessageText={ props.messagesPage.newMessageText }
+          updateNewMessageText={ props.updateNewMessageText }
         />
       </div>
       <div className={ s.users }>

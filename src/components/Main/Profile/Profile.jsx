@@ -6,12 +6,15 @@ import ProfileData from './ProfileData/ProfileData';
 const Profile = (props) => {
   return (
     <div className={ s.container }>
-      <ProfileData profileData={ props.profilePage.profileData }/>
+      <ProfileData 
+        profileData={ props.profilePage.profileData }
+      />
+
       <MyPosts 
-        myPosts={ props.profilePage.myPosts }  
-        avaLink={ props.profilePage.profileData.ava } 
-        addPost={ props.addPost }
+        myPosts={ props.profilePage.myPosts }
+        avaLink={ props.profilePage.profileData.ava }
         newPostText={ props.profilePage.newPostText }
+        addPost={ props.addPost }
         updateNewPostText={ props.updateNewPostText }
       />
     </div>

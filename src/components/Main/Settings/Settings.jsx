@@ -3,7 +3,7 @@ import s from './Settings.module.scss';
 
 const Settings = (props) => {
   return (
-    <div className="container">
+    <div className={ s.container }>
       Settings
     </div>
   );

@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './AddPost.module.scss';
 
-
-export default (props) => {
+const AddPost = props => {
   
   let textAreaRef = React.createRef();
 
@@ -15,7 +14,6 @@ export default (props) => {
     props.updateNewPostText(newText);
   };
 
-  
   return (<div className={ s.new_post }>
     <textarea 
       ref={ textAreaRef }
@@ -27,3 +25,5 @@ export default (props) => {
     </div>
   </div>)
 }
+
+export default AddPost;

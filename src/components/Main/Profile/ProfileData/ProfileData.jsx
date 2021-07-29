@@ -1,10 +1,14 @@
 import React from 'react';
 import s from './ProfileData.module.scss';
 
-export default props => {
+const ProfileData = props => {
   return (
     <div className={s.container}>
-      <img className={s.ava} src={props.profileData.ava}/>
+      <img 
+        className={s.ava} 
+        src={props.profileData.ava}
+        alt="Ava should be here"
+      />
       <div className={s.text}>
         
           <h3>{props.profileData.nick}</h3>
@@ -27,3 +31,5 @@ export default props => {
     </div>
   );
 };
+
+export default ProfileData;

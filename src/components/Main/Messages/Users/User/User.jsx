@@ -12,7 +12,7 @@ const User = (props) => {
       <NavLink to={path} className={s.link} activeClassName={s.active}>
         <div className={s.content}>
           <div className={s.ava}>
-            <img src={props.ava}/>
+            <img src={props.ava} alt="Ava should be here"/>
           </div>
           <div className={s.info}>
             <div className={s.username}>
