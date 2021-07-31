@@ -6,12 +6,16 @@ const SendMessage = (props) => {
   let textAreaRef = React.createRef();
   
   let sendNewMessage = () => {
-    let newMessage = textAreaRef.current.value;
-    props.sendMessage(newMessage);
+    props.dispatch({
+      type: "SEND-MESSAGE",
+    });
   };
   let updateNewMessageText = () => {
     let newText = textAreaRef.current.value;
-    props.updateNewMessageText(newText);
+    props.dispatch({
+      type: "UPDATE-NEW-MESSAGE-TEXT",
+      text: newText,
+    });
   };
   
   return (

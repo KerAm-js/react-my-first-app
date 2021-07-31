@@ -18,9 +18,8 @@ const MyPosts = (props) => {
     <div className={s.container}>
       <h2>My posts</h2>
       <AddPost 
-        addPost={ props.addPost }
         newPostText={ props.newPostText }
-        updateNewPostText={ props.updateNewPostText }
+        dispatch={ props.dispatch }
       />
       <div className={ s.posts }>
         { items }

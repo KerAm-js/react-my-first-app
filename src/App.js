@@ -1,6 +1,6 @@
 //Modules
 import React from 'react';
-import {BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 //My imports
 import style from './App.module.scss';
@@ -19,15 +19,13 @@ const App = (props) => {
   const profile = () => (
     <Profile 
       profilePage={ props.store.getState().profilePage }
-      addPost={ props.store.addPost.bind(props.store) }
-      updateNewPostText={ props.store.updateNewPostText.bind(props.store) }
+      dispatch={ props.store.dispatch.bind(props.store) }
     />
   );
   const messages = () => (
     <Messages 
       messagesPage={ props.store.getState().messagesPage }
-      sendMessage={ props.store.sendMessage.bind(props.store) }
-      updateNewMessageText={ props.store.updateNewMessageText.bind(props.store) }
+      dispatch={ props.store.dispatch.bind(props.store) }
     />
   );
   const news = () => <News />;

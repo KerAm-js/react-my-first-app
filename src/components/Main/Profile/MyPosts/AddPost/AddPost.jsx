@@ -6,12 +6,17 @@ const AddPost = props => {
   let textAreaRef = React.createRef();
 
   let addNewPost = () => {
-    props.addPost();
+    props.dispatch({
+      type: "ADD-NEW-POST"
+    });
   };
 
   let updateNewPostText = () => {
     let newText = textAreaRef.current.value;
-    props.updateNewPostText(newText);
+    props.dispatch({
+      type: "UPDATE-NEW-POST-TEXT",
+      text: newText,
+    });
   };
 
   return (<div className={ s.new_post }>
