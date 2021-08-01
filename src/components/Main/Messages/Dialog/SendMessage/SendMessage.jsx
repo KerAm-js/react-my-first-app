@@ -3,19 +3,17 @@ import s from './SendMessage.module.scss';
 import {
   sendMessageActionCreator,
   updateNewMessageTextActionCreator
-} from './../../../../../Redux/State';
+} from './../../../../../Redux/messagesReducer';
 
 const SendMessage = (props) => {
-  
-  let textAreaRef = React.createRef();
   
   let sendNewMessage = () => {
     props.dispatch(
       sendMessageActionCreator()
     );
   };
-  let updateNewMessageText = () => {
-    let messageText = textAreaRef.current.value;
+  let updateNewMessageText = (event) => {
+    let messageText = event.target.value;
     props.dispatch(
       updateNewMessageTextActionCreator(messageText)
     );
@@ -24,9 +22,9 @@ const SendMessage = (props) => {
   return (
     <div className={ s.container }>
       <textarea 
-        ref={ textAreaRef }
         value={ props.newMessageText }
         onChange= { updateNewMessageText }
+        placeholder="Сообщение"
       />
       <button 
         onClick={ sendNewMessage }

@@ -10,7 +10,7 @@ const Navbar = () => {
         <h2>Menu</h2>
       </div>
       <div className={s.items}>
-      <Item text="Profile" link="/profile"/>
+        <Item text="Profile" link="/profile"/>
         <Item text="Messages" link="/messages"/>           
         <Item text="News" link="/news"/>
         <Item text="Liked" link="/liked"/>

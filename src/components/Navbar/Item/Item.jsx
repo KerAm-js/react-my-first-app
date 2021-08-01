@@ -1,13 +1,19 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import s from './Item.module.scss';
+import { NavLink } from 'react-router-dom';
+import style from './Item.module.scss';
+import withClass from './../../../hoc/withClass';
 
 const Item = (props) => {
   return (
-    <div className={`${s.item}`}>
-      <NavLink to={props.link} activeClassName={s.active}> {props.text} </NavLink>
-    </div>
+    <React.Fragment>
+      <NavLink 
+        to={ props.link } 
+        activeClassName={ style.active }
+      > 
+        { props.text } 
+      </NavLink>
+    </React.Fragment>
   );
 };
 
-export default Item;
+export default withClass(Item, style.item);

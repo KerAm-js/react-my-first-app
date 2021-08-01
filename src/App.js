@@ -39,11 +39,11 @@ const App = (props) => {
         <main className={ style["main"] }>
           <Navbar/>
           <div className={ style["content"] }>
-            <Route path="/profile" render={profile}/>
-            <Route path="/messages" render={messages}/>
-            <Route path="/news" render={news}/>
-            <Route path="/liked" render={liked}/>
-            <Route path="/settings" render={settings}/>
+            <Route path="/profile" render={ profile }/>
+            <Route path="/messages" render={ messages }/>
+            <Route path="/news" render={ news }/>
+            <Route path="/liked" render={ liked }/>
+            <Route path="/settings" render={ settings }/>
           </div>
         </main>
         <Footer/>

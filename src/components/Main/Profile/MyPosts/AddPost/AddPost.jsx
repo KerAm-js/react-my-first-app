@@ -3,20 +3,17 @@ import s from './AddPost.module.scss';
 import { 
   addPostActionCreator, 
   updateNewPostTextActionCreator
-} from './../../../../../Redux/State';
+} from './../../../../../Redux/profileReducer';
 
 const AddPost = props => {
-  
-  let textAreaRef = React.createRef();
-
   let addNewPost = () => {
     props.dispatch(
       addPostActionCreator()
     );
   };
 
-  let updateNewPostText = () => {
-    let postText = textAreaRef.current.value;
+  let updateNewPostText = (event) => {
+    let postText = event.target.value;
     props.dispatch(
       updateNewPostTextActionCreator(postText)
     );
@@ -24,9 +21,9 @@ const AddPost = props => {
 
   return (<div className={ s.new_post }>
     <textarea 
-      ref={ textAreaRef }
       value={ props.newPostText }
       onChange={ updateNewPostText }
+      placeholder="Введите текст"
     />
     <div>
       <button onClick={ addNewPost }>Add post</button>
