@@ -3,7 +3,7 @@ import s from './AddPost.module.scss';
 import { 
   addPostActionCreator, 
   updateNewPostTextActionCreator
-} from './../../../../../Redux/profileReducer';
+} from './../../../../../Redux/profile-reducer';
 
 const AddPost = props => {
   let addNewPost = () => {

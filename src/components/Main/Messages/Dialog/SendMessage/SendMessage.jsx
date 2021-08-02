@@ -3,7 +3,7 @@ import s from './SendMessage.module.scss';
 import {
   sendMessageActionCreator,
   updateNewMessageTextActionCreator
-} from './../../../../../Redux/messagesReducer';
+} from '../../../../../Redux/messages-reducer';
 
 const SendMessage = (props) => {
   
