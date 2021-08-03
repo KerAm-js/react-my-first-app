@@ -9,8 +9,7 @@ const Messages = (props) => {
       <div className={ s.dialogs }>
         <Dialog 
           messages={ props.messagesPage.messages }
-          newMessageText={ props.messagesPage.newMessageText }
-          dispatch={ props.dispatch }
+          store={ props.store }
         />
       </div>
       <div className={ s.users }>

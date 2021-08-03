@@ -1,32 +1,25 @@
 import React from 'react';
 import s from './AddPost.module.scss';
-import { 
-  addPostActionCreator, 
-  updateNewPostTextActionCreator
-} from './../../../../../Redux/profile-reducer';
 
 const AddPost = props => {
-  let addNewPost = () => {
-    props.dispatch(
-      addPostActionCreator()
-    );
+  
+  let onAddPost = () => {
+    props.addPost();
   };
 
-  let updateNewPostText = (event) => {
+  let onUpdateNewPostText = (event) => {
     let postText = event.target.value;
-    props.dispatch(
-      updateNewPostTextActionCreator(postText)
-    );
+    props.updateNewPostText(postText);
   };
 
   return (<div className={ s.new_post }>
     <textarea 
       value={ props.newPostText }
-      onChange={ updateNewPostText }
+      onChange={ onUpdateNewPostText }
       placeholder="Введите текст"
     />
     <div>
-      <button onClick={ addNewPost }>Add post</button>
+      <button onClick={ onAddPost }>Add post</button>
     </div>
   </div>)
 }

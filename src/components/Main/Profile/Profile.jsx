@@ -11,10 +11,9 @@ const Profile = (props) => {
       />
 
       <MyPosts 
-        myPosts={ props.profilePage.myPosts }
         avaLink={ props.profilePage.profileData.ava }
-        newPostText={ props.profilePage.newPostText }
-        dispatch={ props.dispatch }
+        myPosts={ props.profilePage.myPosts }
+        store={ props.store }
       />
     </div>
   );

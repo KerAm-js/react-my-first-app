@@ -39,7 +39,7 @@ const messagesReducer = (state = initialState, action) => {
     default:
       return state
   }
-}
+};
 export let sendMessageActionCreator = () => (
   {type: SEND_MESSAGE}
 );

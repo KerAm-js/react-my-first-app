@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './MyPosts.module.scss';
 import Post from './Post/Post.jsx';
-import AddPost from './AddPost/AddPost';
+import AddPostContainer from './AddPost/AddPostContainer';
 
 const MyPosts = (props) => {
 
-  let items = props.myPosts.map( (post, index) => (
+  let items = props.myPosts.map((post, index) => (
     <Post 
       key={index}
       text={post.text} 
@@ -17,9 +17,8 @@ const MyPosts = (props) => {
   return (
     <div className={s.container}>
       <h2>My posts</h2>
-      <AddPost 
-        newPostText={ props.newPostText }
-        dispatch={ props.dispatch }
+      <AddPostContainer 
+        store={ props.store }
       />
       <div className={ s.posts }>
         { items }

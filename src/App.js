@@ -19,13 +19,13 @@ const App = (props) => {
   const profile = () => (
     <Profile 
       profilePage={ props.store.getState().profilePage }
-      dispatch={ props.store.dispatch.bind(props.store) }
+      store={ props.store }
     />
   );
   const messages = () => (
     <Messages 
       messagesPage={ props.store.getState().messagesPage }
-      dispatch={ props.store.dispatch.bind(props.store) }
+      store={ props.store }
     />
   );
   const news = () => <News />;
