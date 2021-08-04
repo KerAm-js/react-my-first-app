@@ -1,20 +1,15 @@
 import React from 'react';
 import s from './Profile.module.scss';
-import MyPosts from './MyPosts/MyPosts.jsx';
-import ProfileData from './ProfileData/ProfileData';
+import MyPostsContainer from './MyPosts/MyPostsContainer.jsx';
+import ProfileDataContainer from './ProfileData/ProfileDataContainer';
+import AddPostContainer from './AddPost/AddPostContainer';
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div className={ s.container }>
-      <ProfileData 
-        profileData={ props.profilePage.profileData }
-      />
-
-      <MyPosts 
-        avaLink={ props.profilePage.profileData.ava }
-        myPosts={ props.profilePage.myPosts }
-        store={ props.store }
-      />
+      <ProfileDataContainer/>
+      <AddPostContainer/>
+      <MyPostsContainer/>
     </div>
   );
 };

@@ -1,22 +1,17 @@
 import React from 'react';
 import s from './Messages.module.scss';
-import Dialog from './Dialog/Dialog';
-import Users from './Users/Users';
+import DialogContainer from './Dialog/DialogContainer';
+import SendMessageContainer from './SendMessage/SendMessageContainer'
+import UsersContainer from './Users/UsersContainer';
 
-const Messages = (props) => {
+const Messages = () => {
   return (
-    <div className={ s.container }>
-      <div className={ s.dialogs }>
-        <Dialog 
-          messages={ props.messagesPage.messages }
-          store={ props.store }
-        />
-      </div>
-      <div className={ s.users }>
-        <Users 
-          users={ props.messagesPage.users }
-        />
-      </div>
+    <div className={ s.container }> 
+      <div className={ s.dialog }>
+        <DialogContainer/>    
+        <SendMessageContainer/>  
+      </div>    
+      <UsersContainer/>
     </div>
   );
 };

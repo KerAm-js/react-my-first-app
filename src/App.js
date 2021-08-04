@@ -14,23 +14,13 @@ import Liked from './components/Main/Liked/Liked';
 import Settings from './components/Main/Settings/Settings';
 
 
-const App = (props) => {
+const App = () => {
   
-  const profile = () => (
-    <Profile 
-      profilePage={ props.store.getState().profilePage }
-      store={ props.store }
-    />
-  );
-  const messages = () => (
-    <Messages 
-      messagesPage={ props.store.getState().messagesPage }
-      store={ props.store }
-    />
-  );
-  const news = () => <News />;
-  const liked = () => <Liked />;
-  const settings = () => <Settings />;
+  const profile = () => <Profile /> ;
+  const messages = () => <Messages/> ;
+  const news = () => <News /> ;
+  const liked = () => <Liked /> ;
+  const settings = () => <Settings /> ;
 
   return (
     <BrowserRouter>

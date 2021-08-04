@@ -12,16 +12,19 @@ const AddPost = props => {
     props.updateNewPostText(postText);
   };
 
-  return (<div className={ s.new_post }>
-    <textarea 
-      value={ props.newPostText }
-      onChange={ onUpdateNewPostText }
-      placeholder="Введите текст"
-    />
-    <div>
-      <button onClick={ onAddPost }>Add post</button>
+  return (
+    <div className={ s.new_post }>
+      <h2>New Post</h2>
+      <textarea 
+        value={ props.newPostText }
+        onChange={ onUpdateNewPostText }
+        placeholder="Введите текст"
+      />
+      <div>
+        <button onClick={ onAddPost }>Add post</button>
+      </div>
     </div>
-  </div>)
+  )
 }
 
 export default AddPost;

@@ -3,7 +3,6 @@ import s from './Users.module.scss';
 import User from './User/User';
 
 const Users = (props) => {
-  let searchImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/1200px-Vector_search_icon.svg.png";
   
   let list = props.users.map( (user,index) => (
     <User
@@ -17,7 +16,7 @@ const Users = (props) => {
   return (
     <div className={ s.container }>
       <div className={ s.search }>
-        <img src={ searchImage } alt="Search should be here"/>
+        <img src={ props.searchImage } alt="Search should be here"/>
         <input type="text" placeholder="Search"/> 
       </div>
       <div className={ s.usersList }>

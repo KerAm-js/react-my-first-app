@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './MyPosts.module.scss';
 import Post from './Post/Post.jsx';
-import AddPostContainer from './AddPost/AddPostContainer';
 
 const MyPosts = (props) => {
 
@@ -17,9 +16,6 @@ const MyPosts = (props) => {
   return (
     <div className={s.container}>
       <h2>My posts</h2>
-      <AddPostContainer 
-        store={ props.store }
-      />
       <div className={ s.posts }>
         { items }
       </div>
