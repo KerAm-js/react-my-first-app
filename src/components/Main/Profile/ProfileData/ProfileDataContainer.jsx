@@ -1,19 +1,13 @@
 import React from 'react';
 import ProfileData from './ProfileData';
-import StoreContext from './../../../../contextAPI/Context';
+import { connect } from 'react-redux';
 
+const mapStateToProps = (state) => {
+  return {
+    profileData: state.profilePage.profileData
+  }
+}
 
-const ProfileDataContainer = () => {
-  return (
-    <StoreContext.Consumer>
-      {
-        store => {
-          let profileData = store.getState().profilePage.profileData
-          return <ProfileData profileData={ profileData }/>
-        }
-      }
-    </StoreContext.Consumer>
-  );
-};
+const ProfileDataContainer = connect(mapStateToProps)(ProfileData)
 
 export default ProfileDataContainer;

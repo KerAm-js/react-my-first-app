@@ -1,24 +1,15 @@
 import React from 'react';
 import Users from './Users';
-import StoreContext from './../../../../contextAPI/Context';
+import { connect } from 'react-redux';
 
 
-const UsersContainer = (props) => {
-  return (
-    <StoreContext.Consumer>
-      {
-        store => {
-          let messagesPage = store.getState().messagesPage;
-          return(
-            <Users 
-              users={ messagesPage.users }
-              searchImage={ messagesPage.images.searchImage }
-            />
-          )
-        }
-      }
-    </StoreContext.Consumer>
-  );
-};
+const mapStateToProps = (state) => {
+  return {
+    users: state.messagesPage.users,
+    searchImage: state.messagesPage.images.searchImage,
+  }
+}
+
+const UsersContainer = connect(mapStateToProps)(Users)
 
 export default UsersContainer;
