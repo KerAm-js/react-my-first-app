@@ -11,7 +11,8 @@ const Navbar = () => {
       </div>
       <div className={s.items}>
         <Item text="Profile" link="/profile"/>
-        <Item text="Messages" link="/messages"/>           
+        <Item text="Messages" link="/messages"/> 
+        <Item text="Find user" link="/find_user"/>          
         <Item text="News" link="/news"/>
         <Item text="Liked" link="/liked"/>
         <Item text="Settings" link="/settings"/>
