@@ -3,12 +3,37 @@ const TO_UNFOLLOW = 'TO-UNFOLLOW';
 const GET_USERS_LIST = 'GET-USERS-LIST';
 
 let initialState = {
-  usersList: [],
+  usersList: [
+      // {
+      //   username: "Jao",
+      //   ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
+      //   status: "I'm very cool programmer",
+      //   country: "Portugal",
+      //   city: "Portu",
+      //   followed: true, 
+      // },
+      // {
+      //   username: "Jao",
+      //   ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
+      //   status: "I'm very cool programmer",
+      //   country: "Portugal",
+      //   city: "Portu",
+      //   followed: true, 
+      // },
+      // {
+      //   username: "Jao",
+      //   ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
+      //   status: "I'm very cool programmer",
+      //   country: "Portugal",
+      //   city: "Portu",
+      //   followed: false, 
+      // },
+  ],
 }
 
 const usersReducer = (state = initialState, action) => {
   switch(action.type) {
-    case TO_FOLLOW: {
+    case TO_FOLLOW: 
       return {
         ...state,
         usersList: state.usersList.map((user,index) => {
@@ -21,8 +46,8 @@ const usersReducer = (state = initialState, action) => {
           return user
         }),
       };
-    };
-    case TO_UNFOLLOW: {
+    
+    case TO_UNFOLLOW: 
       return {
         ...state,
         usersList: state.usersList.map((user,index) => {
@@ -35,15 +60,15 @@ const usersReducer = (state = initialState, action) => {
           return user
         }),
       };
-    };
-    case GET_USERS_LIST: {
+    
+    case GET_USERS_LIST: 
       return {...state,
       usersList: [...action.usersList],
       };
-    }
-    default: {
+    
+    default: 
       return state;
-    };
+    
   };
 };
 

@@ -1,57 +1,58 @@
 import React from 'react';
 import Item from './Item/Item';
 import style from './Items.module.scss';
+import userDefaultAva from '../../../../img/User_Avatar_2.png'
+import * as axios from 'axios';
 
-const Items = (props) => {
-  if (props.usersList.length === 0) {
-    props.getUsersList([
-      {
-        username: "Jao",
-        ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
-        status: "I'm very cool programmer",
-        country: "Portugal",
-        city: "Portu",
-        followed: true, 
-      },
-      {
-        username: "Jao",
-        ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
-        status: "I'm very cool programmer",
-        country: "Portugal",
-        city: "Portu",
-        followed: true, 
-      },
-      {
-        username: "Jao",
-        ava: "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
-        status: "I'm very cool programmer",
-        country: "Portugal",
-        city: "Portu",
-        followed: false, 
-      },
-    ])
-  };
 
-  const items = props.usersList.map( (user,index) => {
+class Items extends React.Component {
+  
+  constructor(props) {
+    super(props)
+    axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
+      this.props.getUsersList(response.data.items);
+    });
+  }
+
+  // getUsers = () => {
+  //   if (this.props.usersList.length === 0) {
+  //     axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
+  //       this.props.getUsersList(response.data.items);
+  //     });
+  //   };
+  // };
+
+  render() {
+    const items = this.props.usersList.map( (user,index) => {
+      return ( 
+        <Item 
+          key={ index }
+          id={ user.id }
+          ava={ 
+            user.photos.small 
+            ? 
+            user.photos.small 
+            : 
+            userDefaultAva 
+          }
+          name={ user.name }
+          status={ user.status }
+          // country={ user.country }
+          // city={ user.city }
+          followed={ user.followed }
+          toFollow={ () => { this.props.toFollow(index)} }
+          toUnFollow={ () => { this.props.toUnFollow(index)} }
+        />
+      ) 
+    });
+
     return (
-      <Item 
-        key={ index }
-        ava={ user.ava }
-        username={ user.username }
-        status={ user.status }
-        country={ user.country }
-        city={ user.city }
-        followed={ user.followed }
-        toFollow={ () => { props.toFollow(index)} }
-        toUnFollow={ () => { props.toUnFollow(index)} }
-      />
-    ) 
-  })
-  return (
-    <div className={ style['Items'] }>
-      { items }
-    </div>
-  )
-} 
+      <div className={ style['Items'] }>
+        {/* <button onClick={ this.getUsers }>Get users</button> */}
+        { items }
+      </div>
+    );
+  }
+}
 
 export default Items;

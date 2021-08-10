@@ -25,7 +25,7 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
   
   switch (action.type) {
-    case SEND_MESSAGE: {
+    case SEND_MESSAGE: 
       if (state.newMessageText) {
         let newMessage = {
           id: 3,
@@ -40,16 +40,13 @@ const messagesReducer = (state = initialState, action) => {
         };
       };
       return state;
-    };
-    case UPDATE_NEW_MESSAGE_TEXT: {
+    case UPDATE_NEW_MESSAGE_TEXT: 
       return {
         ...state,
         newMessageText: action.messageText,
       };
-    };
-    default: {
+    default: 
       return state;
-    };
   };
 };
 export let sendMessageActionCreator = () => (

@@ -9,15 +9,15 @@ const Item = (props) => {
       </div>
       <div className={ style['data'] }>
         <div className={ style['username']}>
-          { props.username }
+          { props.name }
         </div>
         <div className={ style['status'] }>
           { props.status }
         </div>
-        <div className={ style['location'] }>
+        {/* <div className={ style['location'] }>
           <p>{ props.country },</p>
           <p>{ props.city }</p>
-        </div>
+        </div> */}
       </div>
       <div className={ style['follow'] }>
         { props.followed
