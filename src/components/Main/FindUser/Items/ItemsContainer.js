@@ -1,12 +1,27 @@
 import { connect } from 'react-redux';
-import { toFollowAC,toUnFollowAC,getUsersListAC } from './../../../../Redux/users-reducer'; 
+import { 
+  toFollowAC,
+  toUnFollowAC,
+  setUsersListAC,
+  setTotalCountAC,
+  setCurrentPageAC,
+  setCurrentPageNumbersAC,
+  setPageNumbersAC,
+  setNextCurrentPageNumbersAC,
+  setPreviousCurrentPageNumbersAC,
+ } from './../../../../Redux/users-reducer'; 
 import Items from './Items';
 
 const mapStateToProps = (state) => {
   return {
-    usersList: state.usersPage.usersList
-  }
-}
+    usersList: state.usersPage.usersList,
+    totalCount: state.usersPage.totalCount,
+    pageSize: state.usersPage.pageSize,
+    currentPage: state.usersPage.currentPage,
+    currentPageNumbers: state.usersPage.currentPageNumbers,
+    pageNumbers: state.usersPage.pageNumbers,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     toFollow: userId => {
@@ -15,8 +30,26 @@ const mapDispatchToProps = (dispatch) => {
     toUnFollow: userId => {
       dispatch(toUnFollowAC(userId));
     },
-    getUsersList: (users) => {
-      dispatch(getUsersListAC(users));
+    setUsersList: users => {
+      dispatch(setUsersListAC(users));
+    },
+    setTotalCount: totalCount => {
+      dispatch(setTotalCountAC(totalCount))
+    },
+    setCurrentPage: currentPage => {
+      dispatch(setCurrentPageAC(currentPage));
+    },
+    setCurrentPageNumbers: currentPageNumbers => {
+      dispatch(setCurrentPageNumbersAC(currentPageNumbers));
+    },
+    setPageNumbers: pageNumbers => {
+      dispatch(setPageNumbersAC(pageNumbers));
+    },
+    setNextCurrentPageNumbers: () => {
+      dispatch(setNextCurrentPageNumbersAC());
+    },
+    setPreviousCurrentPageNumbers: () => {
+      dispatch(setPreviousCurrentPageNumbersAC());
     },
   };
 };
