@@ -4,7 +4,7 @@
   max-width: 800px;
   padding: 20px 10px 10px;
   display: grid;
-  grid-template: 70px / 45px 1fr 80px;
+  grid-template: 70px / 45px 4fr 1fr;
   border: 1px solid #ccc;
   box-shadow: 0 0 4px 5px rgba(0,0,0,.14);
   border-radius: 10px;
@@ -20,12 +20,12 @@
   grid-template: 35px 35px/ 1fr 1fr;
 }
 .follow button {
-  font-size: 18px;
-  width: 80px;
+  width: 100%;
+  font-size: 16px;
 }
 .unfollow-button {
   color: rgb(146, 0, 0);
-  border-color: rgb(146, 0, 0);
+  border: 1px solid rgb(146, 0, 0);
 }
 .unfollow-button:hover {
   color: #fff;

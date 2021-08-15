@@ -17,8 +17,8 @@ const Item = (props) => {
       </div>
       <div className={ style['follow'] }>
         { props.followed
-        ?<button className={ style['follow-button'] } onClick={ props.toUnFollow }>follow</button> 
-        :<button className={ style['unfollow-button'] }onClick={ props.toFollow }>unfollow</button>
+        ? <button className={ style['follow-button'] } onClick={ props.toUnFollow }>follow</button> 
+        : <button className={ style['unfollow-button'] }onClick={ props.toFollow }>unfollow</button>
         }
       </div>
     </div>

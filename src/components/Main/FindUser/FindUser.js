@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemsContainer from './Items/ItemsContainer';
+import ItemsContainer from './ItemsContainer/ItemsContainer';
 import style from './FindUser.module.scss'
 
 const FindUser = () => {
