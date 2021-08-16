@@ -137,59 +137,59 @@ const usersReducer = (state = initialState, action) => {
   };
 };
 
-export const toFollowAC = number => (
+export const toFollow = number => (
   {
     type: TO_FOLLOW,
     id: number,
   }
 );
-export const toUnFollowAC = (id) => {
+export const toUnFollow = (id) => {
   return {
     type: TO_UNFOLLOW,
     id: id,
   };
 };
-export const setUsersListAC = (users) => {
+export const setUsersList = (users) => {
   return {
     type: SET_USERS_LIST,
     usersList: users,
   };
 };
-export const setTotalCountAC = totalCount => {
+export const setTotalCount = totalCount => {
   return {
     type: SET_TOTAL_COUNT,
     totalCount,
   };
 };
-export const setCurrentPageAC = currentPage => {
+export const setCurrentPage = currentPage => {
   return {
     type: SET_CURRENT_PAGE,
     currentPage,
   };
 };
-export const setCurrentPageNumbersAC = currentPageNumbers => {
+export const setCurrentPageNumbers = currentPageNumbers => {
   return {
     type: SET_CURRENT_PAGE_NUMBERS,
     currentPageNumbers,
   };
 };
-export const setPageNumbersAC = pageNumbers => {
+export const setPageNumbers = pageNumbers => {
   return {
     type: SET_PAGE_NUMBERS,
     pageNumbers,
   };
 };
-export const setNextCurrentPageNumbersAC = () => {
+export const setNextCurrentPageNumbers = () => {
   return {
     type: SET_NEXT_CURRENT_PAGE_NUMBERS,
   };
 };
-export const setPreviousCurrentPageNumbersAC = () => {
+export const setPreviousCurrentPageNumbers = () => {
   return {
     type: SET_PREVIOUS_CURRENT_PAGE_NUMBERS,
   };
 };
-export const toggleIsFetchingAC = isFetching => {
+export const toggleIsFetching = isFetching => {
   return {
     type: TOGGLE_IS_FETCHING,
     isFetching,

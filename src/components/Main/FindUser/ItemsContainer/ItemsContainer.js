@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { 
-  toFollowAC,
-  toUnFollowAC,
-  toggleIsFetchingAC,
-  setUsersListAC,
-  setTotalCountAC,
-  setCurrentPageAC,
-  setCurrentPageNumbersAC,
-  setPageNumbersAC,
-  setNextCurrentPageNumbersAC,
-  setPreviousCurrentPageNumbersAC,
+  toFollow,
+  toUnFollow,
+  toggleIsFetching,
+  setUsersList,
+  setTotalCount,
+  setCurrentPage,
+  setCurrentPageNumbers,
+  setPageNumbers,
+  setNextCurrentPageNumbers,
+  setPreviousCurrentPageNumbers,
  } from '../../../../Redux/users-reducer'; 
 import Items from './Items/Items';
 import * as axios from 'axios';
@@ -99,40 +99,51 @@ const mapStateToProps = (state) => {
     isFetching: state.usersPage.isFetching,
   };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toFollow: userId => {
-      dispatch(toFollowAC(userId));
-    },
-    toUnFollow: userId => {
-      dispatch(toUnFollowAC(userId));
-    },
-    toggleIsFetching: isFetching => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    },
-    setUsersList: users => {
-      dispatch(setUsersListAC(users));
-    },
-    setTotalCount: totalCount => {
-      dispatch(setTotalCountAC(totalCount))
-    },
-    setCurrentPage: currentPage => {
-      dispatch(setCurrentPageAC(currentPage));
-    },
-    setCurrentPageNumbers: currentPageNumbers => {
-      dispatch(setCurrentPageNumbersAC(currentPageNumbers));
-    },
-    setPageNumbers: pageNumbers => {
-      dispatch(setPageNumbersAC(pageNumbers));
-    },
-    setNextCurrentPageNumbers: () => {
-      dispatch(setNextCurrentPageNumbersAC());
-    },
-    setPreviousCurrentPageNumbers: () => {
-      dispatch(setPreviousCurrentPageNumbersAC());
-    },
-  };
-};
-const ItemsContainer = connect(mapStateToProps,mapDispatchToProps)(ItemsAPIComponent);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     toFollow: userId => {
+//       dispatch(toFollowAC(userId));
+//     },
+//     toUnFollow: userId => {
+//       dispatch(toUnFollowAC(userId));
+//     },
+//     toggleIsFetching: isFetching => {
+//       dispatch(toggleIsFetchingAC(isFetching));
+//     },
+//     setUsersList: users => {
+//       dispatch(setUsersListAC(users));
+//     },
+//     setTotalCount: totalCount => {
+//       dispatch(setTotalCountAC(totalCount))
+//     },
+//     setCurrentPage: currentPage => {
+//       dispatch(setCurrentPageAC(currentPage));
+//     },
+//     setCurrentPageNumbers: currentPageNumbers => {
+//       dispatch(setCurrentPageNumbersAC(currentPageNumbers));
+//     },
+//     setPageNumbers: pageNumbers => {
+//       dispatch(setPageNumbersAC(pageNumbers));
+//     },
+//     setNextCurrentPageNumbers: () => {
+//       dispatch(setNextCurrentPageNumbersAC());
+//     },
+//     setPreviousCurrentPageNumbers: () => {
+//       dispatch(setPreviousCurrentPageNumbersAC());
+//     },
+//   };
+// };
+const ItemsContainer = connect(mapStateToProps,{ 
+  toFollow,
+  toUnFollow,
+  toggleIsFetching,
+  setUsersList,
+  setTotalCount,
+  setCurrentPage,
+  setCurrentPageNumbers,
+  setPageNumbers,
+  setNextCurrentPageNumbers,
+  setPreviousCurrentPageNumbers,
+ })(ItemsAPIComponent);
 
 export default ItemsContainer;
