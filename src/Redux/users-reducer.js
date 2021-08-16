@@ -7,6 +7,7 @@ const SET_CURRENT_PAGE_NUMBERS = 'SET_CURRENT_PAGE_NUMBERS';
 const SET_PAGE_NUMBERS = 'SET_PAGE_NUMBERS';
 const SET_NEXT_CURRENT_PAGE_NUMBERS = 'SET-NEXT-CURRENT-PAGE-NUMBERS'
 const SET_PREVIOUS_CURRENT_PAGE_NUMBERS = 'SET-PREVIOUS-CURRENT-PAGE-NUMBERS'
+const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
 
 
@@ -17,6 +18,7 @@ let initialState = {
   currentPage: 1,
   pageNumbers: [],
   currentPageNumbers: [],
+  isFetching: true,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -122,6 +124,13 @@ const usersReducer = (state = initialState, action) => {
         pageNumbers: action.pageNumbers,
       };
 
+    case TOGGLE_IS_FETCHING:
+      console.log(TOGGLE_IS_FETCHING)
+      return {
+        ...state,
+        isFetching: action.isFetching,
+      };
+
     default: 
       return state;
     
@@ -178,6 +187,12 @@ export const setNextCurrentPageNumbersAC = () => {
 export const setPreviousCurrentPageNumbersAC = () => {
   return {
     type: SET_PREVIOUS_CURRENT_PAGE_NUMBERS,
+  };
+};
+export const toggleIsFetchingAC = isFetching => {
+  return {
+    type: TOGGLE_IS_FETCHING,
+    isFetching,
   };
 };
 

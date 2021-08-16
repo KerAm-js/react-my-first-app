@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { 
   toFollowAC,
   toUnFollowAC,
+  toggleIsFetchingAC,
   setUsersListAC,
   setTotalCountAC,
   setCurrentPageAC,
@@ -13,14 +14,18 @@ import {
  } from '../../../../Redux/users-reducer'; 
 import Items from './Items/Items';
 import * as axios from 'axios';
-
+import Loader from '../../../common/Loader/Loader';
 
 class ItemsAPIComponent extends React.Component {
   
   componentDidMount() {
+    this.props.toggleIsFetching(true);
     axios.get(
       `https://social-network.samuraijs.com/api/1.0/users?page=${ this.props.currentPage }&${ this.props.pageSize }`
-    ).then((response) => this.onGetResponse(response));
+    ).then((response) => {
+      this.onGetResponse(response);
+      this.props.toggleIsFetching(false);
+    });
   };
 
 
@@ -50,25 +55,34 @@ class ItemsAPIComponent extends React.Component {
 
   onPageChanged = (page) => {
     this.props.setCurrentPage(page);
+    this.props.toggleIsFetching(true);
     axios.get(
       `https://social-network.samuraijs.com/api/1.0/users?page=${ page }&${ this.props.pageSize }`
-    ).then((response) => this.onGetResponse(response));
+    ).then((response) => {
+      this.onGetResponse(response);
+      this.props.toggleIsFetching(false);
+    });
   };
 
 
 
   render() {
     return (
-      <Items 
-        currentPageNumbers={ this.props.currentPageNumbers }
-        currentPage={ this.props.currentPage }
-        usersList={ this.props.usersList }
-        toFollow={ this.props.toFollow }
-        toUnFollow={ this.props.toUnFollow }
-        setNextCurrentPageNumbers={ this.props.setNextCurrentPageNumbers }
-        setPreviousCurrentPageNumbers={ this.props.setPreviousCurrentPageNumbers } 
-        onPageChanged={ this.onPageChanged }
-      />
+      <>
+        { this.props.isFetching
+        ? <Loader/> 
+        : <Items 
+            currentPageNumbers={ this.props.currentPageNumbers }
+            currentPage={ this.props.currentPage }
+            usersList={ this.props.usersList }
+            toFollow={ this.props.toFollow }
+            toUnFollow={ this.props.toUnFollow }
+            setNextCurrentPageNumbers={ this.props.setNextCurrentPageNumbers }
+            setPreviousCurrentPageNumbers={ this.props.setPreviousCurrentPageNumbers } 
+            onPageChanged={ this.onPageChanged }
+          />
+        }
+      </>   
     )
   }
 }
@@ -82,6 +96,7 @@ const mapStateToProps = (state) => {
     currentPage: state.usersPage.currentPage,
     currentPageNumbers: state.usersPage.currentPageNumbers,
     pageNumbers: state.usersPage.pageNumbers,
+    isFetching: state.usersPage.isFetching,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -91,6 +106,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     toUnFollow: userId => {
       dispatch(toUnFollowAC(userId));
+    },
+    toggleIsFetching: isFetching => {
+      dispatch(toggleIsFetchingAC(isFetching));
     },
     setUsersList: users => {
       dispatch(setUsersListAC(users));
